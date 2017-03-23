@@ -1,7 +1,7 @@
 {
   "name": "happensit/doctrine",
   "description": "Doctrine Service Provider for Simple Framework",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "license": "MIT",
   "authors": [
     {
