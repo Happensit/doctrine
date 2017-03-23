@@ -1,0 +1,31 @@
+{
+  "name": "happensit/doctrine",
+  "description": "Doctrine Service Provider for Simple Framework",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Happensit",
+      "email": "hello@happensit.com"
+    }
+  ],
+  "require": {
+    "commty/simple-framework": "dev-master",
+    "vlucas/phpdotenv": "2.3.*",
+    "doctrine/orm": "^2.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Happensit\\Doctrine\\": "src/"
+    }
+  },
+  "bin": [
+    "bin/console",
+    "bin/console.php"
+  ],
+  "scripts": {
+    "post-package-install": [
+      "php -r \"file_exists('.env') || copy('.env.example', getcwd() . '.env');\""
+    ]
+  }
+}
