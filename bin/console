@@ -1,11 +1,6 @@
 #!/usr/bin/env php
 <?php
-
 set_time_limit(0);
-
-var_dump(getcwd() . '/app/bootstrap.php');
-
-die();
 
 $app = require  getcwd() . '/app/bootstrap.php';
 $console = require __DIR__.'/console.php';
