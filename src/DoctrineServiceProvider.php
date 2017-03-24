@@ -29,8 +29,7 @@ class DoctrineServiceProvider implements ServiceProviderInterface
         $eventManager = new EventManager();
         $eventManager->addEventListener(Events::loadClassMetadata, $tablePrefix);
 
-        $app->container->setInstance(
-            EntityManager::class,
+        $app->container->setClass(
             EntityManager::create($this->getConnectionOptions(), $config, $eventManager)
         );
     }
