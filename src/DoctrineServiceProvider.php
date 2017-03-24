@@ -20,7 +20,7 @@ class DoctrineServiceProvider implements ServiceProviderInterface
     public function register(Application $app)
     {
         $entityPath = $app->getBasePath() . '/app/Entity';
-        $proxyDir = $app->getBasePath() . '/storage/cache/proxies';
+        $proxyDir = $app->getStoragePath() . '/cache/proxies';
 
         $config = Setup::createAnnotationMetadataConfiguration([$entityPath], false, $proxyDir, null, false);
 
