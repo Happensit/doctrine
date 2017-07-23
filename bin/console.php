@@ -9,7 +9,8 @@ $em = $app->container->getClass(\Doctrine\ORM\EntityManager::class);
 
 $console->setHelperSet(new Symfony\Component\Console\Helper\HelperSet([
     'db' => new \Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper($em->getConnection()),
-    'em' => new \Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper($em)
+    'em' => new \Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper($em),
+    'dialog' => new \Symfony\Component\Console\Helper\QuestionHelper(),
 ]));
 
 $console->addCommands([
@@ -39,6 +40,14 @@ $console->addCommands([
     new \Doctrine\ORM\Tools\Console\Command\MappingDescribeCommand(),
     new \Doctrine\DBAL\Tools\Console\Command\RunSqlCommand,
     new \Doctrine\DBAL\Tools\Console\Command\ReservedWordsCommand,
+
+    // Migrations Commands
+    new \Doctrine\DBAL\Migrations\Tools\Console\Command\DiffCommand(),
+    new \Doctrine\DBAL\Migrations\Tools\Console\Command\ExecuteCommand(),
+    new \Doctrine\DBAL\Migrations\Tools\Console\Command\GenerateCommand(),
+    new \Doctrine\DBAL\Migrations\Tools\Console\Command\MigrateCommand(),
+    new \Doctrine\DBAL\Migrations\Tools\Console\Command\StatusCommand(),
+    new \Doctrine\DBAL\Migrations\Tools\Console\Command\VersionCommand()
 ]);
 
 return $console;

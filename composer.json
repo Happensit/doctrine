@@ -12,7 +12,8 @@
   "require": {
     "commty/simple-framework": "dev-master",
     "vlucas/phpdotenv": "2.3.*",
-    "doctrine/orm": "^2.5"
+    "doctrine/orm": "^2.5",
+    "doctrine/migrations": "^1.6@dev"
   },
   "autoload": {
     "psr-4": {
